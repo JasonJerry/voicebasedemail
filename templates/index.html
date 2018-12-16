@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+    <title>HOME</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  
+    <link rel='stylesheet' href='https://rawgit.com/daneden/animate.css/master/animate.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'>
+    <link href="{% static 'css/home.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body translate="no" >
+
+    <main class="main">
+        <header class="header">
+            <h1 class="header__title">Voice Based Email</h1>
+
+            <p>Hit record and give commands. Speech recognition works better with full sentences so tell App to "Send Email" or check out the <a href="#modal" class="modal-trigger">full list of commands</a>. <strong>Full support Chrome desktop only.</strong></p>
+        </header>
+    </main>
+
+<a data-start class="record-btn btn-floating btn-large waves-effect waves-light teal"><i class="material-icons">mic</i></a>
+
+<div data-speech class="speech"><p class="speech__inner">Speak now...</p></div>
+
+ <div id="modal" class="modal">
+    <div class="modal-content">
+      <h4>Voice Commands</h4>
+      <p>Speech Recognition works better with sentences.</p>
+      <ul class="list">
+        <li>Send</li>
+        <li>Recieve</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'></script>
+
+<script src="{% static 'js/support.js' %}"></script>
+
+
+</body>
+
+</html>
+ 

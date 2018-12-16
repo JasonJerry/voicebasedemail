@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}COMPOSE{% endblock title %}
+
+{% block head %}
+<link rel='stylesheet' href='https://rawgit.com/daneden/animate.css/master/animate.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'>
+<link href="{% static 'css/home.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock head %}
+
+{% block body %}
+
+
+
+<div class="wrapper">
+    <div class="container">
+
+        {% include 'breadcrumb.html' %}
+
+        <a data-start class="record-btn btn-floating btn-large waves-effect waves-light teal"><i class="fa fa-microphone"></i></a>
+        <div data-speech class="speech"><p class="speech__inner">Speak now...</p></div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="mails">
+
+                    <div class="table-box">
+
+                        <div class="table-detail mail-right">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card-box m-t-20">
+
+                                        <div class="">
+                                            <form role="form" method="POST" action=".">
+                                                    {% csrf_token %}
+
+                                                <div class="form-group">
+                                                    <input type="email" required="required" name="to" class="form-control" placeholder="To: CC/BCC">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" required="required" name="subject" class="form-control" placeholder="Subject">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" required="required" name="body" class="form-control" placeholder="Body">
+                                                </div>
+
+                                                <div class="btn-toolbar form-group m-b-0">
+                                                    <div class="pull-right">
+                                                        <button class="btn btn-purple waves-effect waves-light"> <span>Send</span> <i class="fa fa-send m-l-10"></i> </button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- End row -->
+
+                        </div> <!-- table detail -->
+
+
+                    </div>
+                    <!-- end table box -->
+
+                </div> <!-- mails -->
+            </div>
+        </div>
+        <!-- end row -->
+
+
+    </div> <!-- end container -->
+</div>
+<!-- end wrapper -->
+
+{% endblock body %}
+
+{% block base %}
+<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'></script>
+<script src="{% static 'js/compose.js' %}"></script>
+
+{% endblock base %}
