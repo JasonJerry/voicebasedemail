@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'oauth2client.contrib.django_util',
+'VoiceBasedEmail',
 ]
 
 MIDDLEWARE = [
